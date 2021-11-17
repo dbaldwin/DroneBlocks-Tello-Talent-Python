@@ -1,10 +1,13 @@
 import time
 import random
 
+"""
+usage: python 
+"""
 time_to_switch_colors = 0
 
 
-def init(tello, fly_flag=False):
+def init(tello, params):
     """
 
     :param tello: Reference to the DJITelloPy Tello object.
@@ -24,16 +27,15 @@ def init(tello, fly_flag=False):
     return None
 
 
-def handler(tello, frame, fly_flag=False):
+def handler(tello, frame, params):
     """
 
     :param tello: Reference to the DJITelloPy Tello object.
     :type tello: Tello
     :param frame: image
     :type frame:
-    :param fly_flag: True - the fly flag was specified and the Tello will take off. False - the Tello will NOT
-                        be instructed to take off
-    :type fly_flag:  bool
+    :param params:
+    :type params:  dictionary
     :return: None
     :rtype:
     """
@@ -46,7 +48,7 @@ def handler(tello, frame, fly_flag=False):
     return
 
 
-def stop(tello, fly_flag=False):
+def stop(tello, params):
     """
     Called when the script runner is exiting.
 
