@@ -1,6 +1,11 @@
 from droneblocks.tello_keyboard_mapper import UP, DOWN, LEFT, RIGHT
 import time
 
+"""
+user script that will detect a mission pad and print the mission pad id, and display the 
+mission pad id on the 8x8 matrix display.  It will also print out the x,y,z distance from
+the Tello to the mission pad.
+"""
 
 def init(tello, params):
     # enable mission pad detection downward camera only

@@ -3,16 +3,42 @@ from droneblocks.tello_keyboard_mapper import UP, DOWN, LEFT, RIGHT
 
 """
 usage: 
+Challenge:
+Write a user script that will display an UP,DOWN,LEFT,RIGHT arrow in response to keyboard commands.
+If the key pressed is not recognized, display a question mark.
+
 python -m droneblocks.tello_script_runner --handler 16_challenge_2_user_script --fly
 """
 
 
 def init(tello, params):
+    """
+    Called once at the beginning of the script.  Allows for initialization of the user script.
+    :param tello:
+    :type tello:
+    :param params:
+    :type params:
+    :return:
+    :rtype:
+    """
+    # start out by clearing the display
     tello.clear_display()
     return None
 
 
 def handler(tello, frame, params):
+    """
+    Called continually during the execution of the user script.
+
+    :param tello:
+    :type tello:
+    :param frame:
+    :type frame:
+    :param params:
+    :type params:
+    :return:
+    :rtype:
+    """
     if 'last_key_pressed' in params:
         if params['last_key_pressed'] == UP:
             tello.display_up_arrow()

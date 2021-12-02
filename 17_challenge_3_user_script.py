@@ -1,5 +1,4 @@
 import time
-from droneblocks.tello_keyboard_mapper import UP, DOWN, LEFT, RIGHT
 
 """
 usage: 
@@ -12,7 +11,7 @@ python -m droneblocks.tello_script_runner --handler 17_challenge_3_user_script -
 def init(tello, params):
     tello.clear_display()
     time.sleep(0.25)
-    tello.scroll_string("Hello Pat")
+    tello.scroll_string("Ready...")
     return None
 
 

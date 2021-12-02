@@ -10,7 +10,7 @@ if __name__ == '__main__':
     tello.connect()
 
     # enable mission pad detection downward camera only
-    tello.enable_mission_pads() # default is direction 0
+    tello.enable_mission_pads() # default is direction 0, or down
     tello.set_mission_pad_detection_direction(0)
 
     print("Clear display")

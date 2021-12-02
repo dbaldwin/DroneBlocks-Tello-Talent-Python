@@ -1,6 +1,9 @@
 import time
 
 """
+Challenge:
+Write a user script that will change the top LED based on the height of the Tello.
+
 usage: python -m droneblocks.tello_script_runner --handler 15_top_led_challenge_user_script --fly
 """
 
