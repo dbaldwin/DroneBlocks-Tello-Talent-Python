@@ -1,9 +1,10 @@
-import time
 from droneblocksutils.exceptions import LandException
+from set_top_led import main
+
 """
 usage: 
-
-python -m droneblocks.tello_script_runner --handler 01_takeoff_land_user_script --fly --display-video --show-original-video
+cd top_led
+python -m droneblocks.tello_script_runner --handler set_top_led_user_script
 
 """
 
@@ -18,6 +19,9 @@ def init(tello, params):
     :return:
     :rtype:
     """
+    # Turn the motor on to keep the Tello cool
+    tello.turn_motor_on()
+
     return None
 
 
@@ -34,8 +38,9 @@ def handler(tello, frame, params):
     :return:
     :rtype:
     """
-    time.sleep(2)
+    main(tello)
     raise LandException()
+
     return
 
 
@@ -51,3 +56,4 @@ def stop(tello, params):
     :return: None
     :rtype:
     """
+    tello.turn_motor_off()
