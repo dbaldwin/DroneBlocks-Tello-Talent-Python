@@ -1,10 +1,18 @@
-from droneblocks.DroneBlocksTello import DroneBlocksTello
+from droneblocks.DroneBlocksContextManager import DroneBlocksContextManager
 import time
 
+"""
+Usage:
+
+python alternate_top_led_context_manager.py
+
+"""
 
 def main(droneblocks_tello):
     battery_level = droneblocks_tello.get_battery()
     print(f"Battery Life Percentage: {battery_level}")
+
+    db_tello.clear_everything()
 
     print("Alternate Top LED between red and blue (raw command)")
     rtn = droneblocks_tello.send_command_with_return("EXT led bl 1.0 255 0 0 0 0 255")
@@ -28,16 +36,5 @@ def main(droneblocks_tello):
 
 
 if __name__ == '__main__':
-    print("Create Tello object")
-    db_tello = DroneBlocksTello()
-    try:
-        print("Connect to Tello Drone")
-        db_tello.connect()
-
-        print("Turn motor to stay cool")
-        db_tello.turn_motor_on()
-
+    with DroneBlocksContextManager(motor_on=True) as db_tello:
         main(db_tello)
-
-    finally:
-        db_tello.turn_motor_off()
