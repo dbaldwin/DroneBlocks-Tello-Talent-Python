@@ -1,15 +1,15 @@
 from droneblocksutils.exceptions import LandException
-from alternate_top_led import main
+from display_matrix_custom_pattern_03 import main
 
 """
 usage: 
 cd top_led
 
-python -m droneblocks.tello_script_runner --handler alternate_top_led_user_script
+python -m droneblocks.tello_script_runner --handler display_matrix_custom_pattern_user_script_03
 
-python -m droneblocks.tello_script_runner --handler alternate_top_led_user_script --show-original-video
+python -m droneblocks.tello_script_runner --handler display_matrix_custom_pattern_user_script_03 --show-original-video
 
-python -m droneblocks.tello_script_runner --handler alternate_top_led_user_script --show-original-video --fly
+python -m droneblocks.tello_script_runner --handler display_matrix_custom_pattern_user_script_03 --show-original-video --fly
 
 
 """
@@ -32,7 +32,7 @@ def init(tello, params):
 
     return None
 
-
+main_called_flag = False
 def handler(tello, frame, params):
     """
     Called continually during the execution of the user script.
@@ -46,8 +46,12 @@ def handler(tello, frame, params):
     :return:
     :rtype:
     """
-    main(tello)
-    raise LandException()
+    global main_called_flag
+
+    if not main_called_flag:
+        main(tello)
+        main_called_flag = True
+    # raise LandException()
 
     return
 

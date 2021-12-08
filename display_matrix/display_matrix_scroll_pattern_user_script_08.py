@@ -1,15 +1,15 @@
 from droneblocksutils.exceptions import LandException
-from alternate_top_led import main
+from display_matrix_scroll_pattern_07 import main
 
 """
 usage: 
-cd top_led
+cd display_matrix
 
-python -m droneblocks.tello_script_runner --handler alternate_top_led_user_script
+python -m droneblocks.tello_script_runner --handler display_matrix_scroll_pattern_07
 
-python -m droneblocks.tello_script_runner --handler alternate_top_led_user_script --show-original-video
+python -m droneblocks.tello_script_runner --handler display_matrix_scroll_pattern_07 --show-original-video
 
-python -m droneblocks.tello_script_runner --handler alternate_top_led_user_script --show-original-video --fly
+python -m droneblocks.tello_script_runner --handler display_matrix_scroll_pattern_07 --show-original-video --fly
 
 
 """
@@ -31,7 +31,6 @@ def init(tello, params):
         tello.turn_motor_on()
 
     return None
-
 
 def handler(tello, frame, params):
     """

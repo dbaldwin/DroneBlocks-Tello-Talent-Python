@@ -15,4 +15,4 @@ if __name__ == '__main__':
     print("Connect to Tello Drone")
     tello.connect()
 
-    tello.turn_motor_off()
+    tello.land()

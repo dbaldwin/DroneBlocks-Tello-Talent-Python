@@ -1,15 +1,15 @@
 from droneblocksutils.exceptions import LandException
-from alternate_top_led import main
+from display_matrix_pattern_01 import main
 
 """
 usage: 
 cd top_led
 
-python -m droneblocks.tello_script_runner --handler alternate_top_led_user_script
+python -m droneblocks.tello_script_runner --handler display_matrix_pattern_user_script
 
-python -m droneblocks.tello_script_runner --handler alternate_top_led_user_script --show-original-video
+python -m droneblocks.tello_script_runner --handler display_matrix_pattern_user_script --show-original-video
 
-python -m droneblocks.tello_script_runner --handler alternate_top_led_user_script --show-original-video --fly
+python -m droneblocks.tello_script_runner --handler display_matrix_pattern_user_script --show-original-video --fly
 
 
 """

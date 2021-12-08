@@ -15,7 +15,7 @@ if __name__ == '__main__':
     for color in ['red', 'blue', 'purple']:
         db_tello.clear_display()
 
-        # db_tello.display_message("Hello Python class",)
+        # droneblocks_tello.display_message("Hello Python class",)
 
         db_tello.display_up_arrow(color)
 
