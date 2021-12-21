@@ -1,4 +1,3 @@
-from droneblocksutils.exceptions import LandException
 import time
 import cv2
 
@@ -12,11 +11,12 @@ Usage:
 cd examples
 
 # Show both video windows
-python -m droneblocks.tello_script_runner --handler video_feed_user_script --show-original-video --display-video
+python -m droneblocks.tello_script_runner --handler video_feed_user_script --show-original-video --display-video --tello-web
 
-# Show only the User Tello Video
+# Show only the User Tello Video updated in the user script
 python -m droneblocks.tello_script_runner --handler video_feed_user_script --display-video
 
+# Show only the original Tello Video
 python -m droneblocks.tello_script_runner --handler video_feed_user_script --show-original-video
 
 
@@ -34,7 +34,10 @@ def init(tello, params):
     :rtype:
     """
     # Turn the motor on to keep the Tello cool
-    tello.turn_motor_on()
+    try:
+        tello.turn_motor_on()
+    except:
+        pass
 
     return None
 
@@ -77,4 +80,7 @@ def stop(tello, params):
     :return: None
     :rtype:
     """
-    tello.turn_motor_off()
+    try:
+        tello.turn_motor_off()
+    except:
+        pass

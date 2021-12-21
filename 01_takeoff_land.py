@@ -1,6 +1,5 @@
 from droneblocks.DroneBlocksTello import DroneBlocksTello
 import time
-from djitellopy import Tello
 
 """
 * Tello class vs Script
