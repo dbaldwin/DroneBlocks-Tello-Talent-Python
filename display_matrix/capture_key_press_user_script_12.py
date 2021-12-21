@@ -2,6 +2,9 @@ from droneblocks.tello_keyboard_mapper import UP, DOWN, LEFT, RIGHT
 import time
 
 """
+
+NOTE:  I am removing key press flying and this script will go away
+
 Using the keyboard commands UP, DOWN, LEFT, RIGHT capture the key press and update the 
 matrix display.
 
