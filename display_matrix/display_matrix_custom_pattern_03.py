@@ -2,6 +2,14 @@ from droneblocks.DroneBlocksContextManager import DroneBlocksContextManager
 from droneblocks.DroneBlocksTello import DroneBlocksTello
 import time
 
+"""
+Usage:
+
+cd display_matrix
+
+python display_matrix_custom_pattern_03.py
+
+"""
 
 def main(droneblocks_tello):
     battery_level = droneblocks_tello.get_battery()

@@ -2,6 +2,16 @@ from droneblocks.DroneBlocksContextManager import DroneBlocksContextManager
 from droneblocks.DroneBlocksTello import DroneBlocksTello
 import time
 
+"""
+Usage:
+
+Connect to Robomaster Tello Talent WiFi (RMTT-??????)
+
+cd display_matrix
+
+python display_matrix_pattern_01.py
+
+"""
 
 def main(droneblocks_tello):
     battery_level = droneblocks_tello.get_battery()

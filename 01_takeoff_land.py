@@ -2,7 +2,10 @@ from droneblocks.DroneBlocksTello import DroneBlocksTello
 import time
 
 """
-* Tello class vs Script
+
+Usage:
+
+python 01_takeoff_land.py
 
 """
 

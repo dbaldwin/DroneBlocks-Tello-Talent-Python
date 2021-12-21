@@ -2,14 +2,14 @@ from droneblocksutils.exceptions import LandException
 from display_matrix_pattern_01 import main
 
 """
-usage: 
-cd top_led
+Usage:
 
-python -m droneblocks.tello_script_runner --handler display_matrix_pattern_user_script
+Connect to Robomaster Tello Talent WiFi (RMTT-??????)
 
-python -m droneblocks.tello_script_runner --handler display_matrix_pattern_user_script --show-original-video
+cd display_matrix
 
-python -m droneblocks.tello_script_runner --handler display_matrix_pattern_user_script --show-original-video --fly
+python -m droneblocks.tello_script_runner --handler display_matrix_pattern_user_script_02
+ 
 
 
 """

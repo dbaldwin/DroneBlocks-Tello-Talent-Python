@@ -1,7 +1,7 @@
 import time
 from droneblocksutils.exceptions import LandException
 """
-usage: 
+Usage: 
 
 python -m droneblocks.tello_script_runner --handler 01_takeoff_land_user_script --fly --display-video --show-original-video
 
