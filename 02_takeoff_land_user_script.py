@@ -3,7 +3,7 @@ from droneblocksutils.exceptions import LandException
 """
 Usage: 
 
-python -m droneblocks.tello_script_runner --handler 01_takeoff_land_user_script --fly --display-video --show-original-video
+python -m droneblocks.tello_script_runner --handler 02_takeoff_land_user_script --fly --display-video --show-original-video
 
 """
 
