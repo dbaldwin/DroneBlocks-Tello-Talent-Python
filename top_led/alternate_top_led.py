@@ -1,6 +1,14 @@
 from droneblocks.DroneBlocksTello import DroneBlocksTello
 import time
 
+"""
+Usage
+
+cd top_led
+
+python alternate_top_led.py
+"""
+
 
 def main(droneblocks_tello):
     battery_level = droneblocks_tello.get_battery()

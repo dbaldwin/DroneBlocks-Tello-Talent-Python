@@ -8,6 +8,7 @@ python set_top_led.py
 
 """
 
+
 def main(droneblocks_tello):
     battery_level = droneblocks_tello.get_battery()
     print(f"Battery Life Percentage: {battery_level}")
@@ -27,13 +28,8 @@ def main(droneblocks_tello):
     print(rtn)
     time.sleep(3)
 
-    print("Set LED to Purple")
-    rtn = droneblocks_tello.set_top_led(r=130, g=130, b=189)
-    print(rtn)
-    time.sleep(3)
-
     print("Set LED to Yellow")
-    rtn = droneblocks_tello.set_top_led(r=243, g=171, b=105)
+    rtn = droneblocks_tello.set_top_led(r=255, g=0, b=255)
     print(rtn)
     time.sleep(3)
 

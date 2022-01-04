@@ -41,8 +41,6 @@ def handler(tello, frame, params):
     main(tello)
     raise LandException()
 
-    return
-
 
 def stop(tello, params):
     """
@@ -50,9 +48,8 @@ def stop(tello, params):
 
     :param tello: Reference to the DJITelloPy Tello object.
     :type tello: Tello
-    :param fly_flag: True - the fly flag was specified and the Tello will take off. False - the Tello will NOT
-                        be instructed to take off
-    :type fly_flag:  bool
+    :param params:
+    :type params: dictionary
     :return: None
     :rtype:
     """
