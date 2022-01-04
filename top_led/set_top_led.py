@@ -4,6 +4,7 @@ import time
 """
 Usage:
 
+cd top_led
 python set_top_led.py
 
 """
@@ -13,7 +14,7 @@ def main(droneblocks_tello):
     battery_level = droneblocks_tello.get_battery()
     print(f"Battery Life Percentage: {battery_level}")
 
-    print("Pulse Top LED raw command")
+    print("Set Top LED to red.")
     rtn = droneblocks_tello.send_command_with_return("EXT led 255 0 0")
     print(rtn)
     time.sleep(3)
