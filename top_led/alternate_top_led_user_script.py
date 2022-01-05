@@ -9,7 +9,7 @@ python -m droneblocks.tello_script_runner --handler alternate_top_led_user_scrip
 
 python -m droneblocks.tello_script_runner --handler alternate_top_led_user_script --tello-web
 
-python -m droneblocks.tello_script_runner --handler alternate_top_led_user_script --show-original-video
+python -m droneblocks.tello_script_runner --handler alternate_top_led_user_script --show-original-video --tello-web
 
 python -m droneblocks.tello_script_runner --handler alternate_top_led_user_script --show-original-video --fly
 
@@ -22,13 +22,13 @@ def init(tello, params):
 
 
 def handler(tello, frame, params):
-    r1 = random.randint(0,255)
-    g1 = random.randint(0,255)
-    b1 = random.randint(0,255)
+    r1 = random.randint(0,100)
+    g1 = random.randint(0,100)
+    b1 = random.randint(0,100)
 
-    r2 = random.randint(0,255)
-    g2 = random.randint(0,255)
-    b2 = random.randint(0,255)
+    r2 = random.randint(0,100)
+    g2 = random.randint(0,100)
+    b2 = random.randint(0,100)
 
     freq = random.randint(0,10)
 
@@ -37,13 +37,7 @@ def handler(tello, frame, params):
 
 
 def stop(tello, params):
-    print("STOP STOP STOP")
-
     try:
         tello.turn_motor_off()
-    except:
-        pass
-    try:
+    finally:
         tello.clear_everything()
-    except:
-        pass
