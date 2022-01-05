@@ -53,7 +53,7 @@ if __name__ == '__main__':
 """
 if __name__ == '__main__':
     print("Create Tello object")
-    with DroneBlocksContextManager(motor_on=True, start_tello_web=False) as db_tello:
+    with DroneBlocksContextManager(motor_on=True) as db_tello:
         # only setting brightness to better recording
         db_tello.set_display_brightness(10)
         main(db_tello)
