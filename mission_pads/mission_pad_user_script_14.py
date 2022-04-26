@@ -7,7 +7,7 @@ the Tello to the mission pad.
 
 Usage:
 
-python -m droneblocks.tello_script_runner --handler mission_pad_id_detector --tello-web
+python -m droneblocks.tello_script_runner --handler mission_pad_user_script_14 --tello-web
 """
 
 def init(tello, params):
@@ -15,21 +15,24 @@ def init(tello, params):
     tello.enable_mission_pads() # default is direction 0
     tello.set_mission_pad_detection_direction(0) # optional but here for clarity
     tello.clear_display()
+    tello.set_top_led(r=255, g=0, b=0)
+
     return None
 
 
 def handler(tello, frame, params):
     mid = tello.get_mission_pad_id()
-    if mid > 0:
+    if 1 <= mid <= 8:
+        # then we have detected a mission pad
+        tello.set_top_led(r=0, g=255, b=0)
         print(mid)
         tello.display_character(mid)
         x = tello.get_mission_pad_distance_x()
         y = tello.get_mission_pad_distance_y()
         z = tello.get_mission_pad_distance_z()
         print(f"{x},{y},{z}")
-        tello.set_top_led(r=0, g=255, b=0)
-
     else:
+        tello.display_character("X")
         tello.set_top_led(r=255, g=0, b=0)
 
     return
