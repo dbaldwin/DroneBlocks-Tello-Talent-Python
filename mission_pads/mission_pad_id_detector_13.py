@@ -2,7 +2,8 @@ from droneblocks.DroneBlocksContextManager import DroneBlocksContextManager
 import time
 
 """
-With Motors off, walk the RoboMaster Tello Talent over mission pads to see the mission pad ID
+With Motors off, walk the RoboMaster Tello Talent over mission pads to see 
+the mission pad ID
 detected and displayed.
 Usage:
 
