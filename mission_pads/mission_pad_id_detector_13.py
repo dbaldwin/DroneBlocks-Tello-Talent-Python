@@ -55,5 +55,5 @@ def main(droneblocks_tello):
 
 
 if __name__ == '__main__':
-    with DroneBlocksContextManager(start_tello_web=True) as db_tello:
+    with DroneBlocksContextManager(start_tello_web=False) as db_tello:
         main(db_tello)
