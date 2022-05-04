@@ -2,15 +2,15 @@ from droneblocks.DroneBlocksContextManager import DroneBlocksContextManager
 import time
 
 """
-With Motors off, walk the RoboMaster Tello Talent over mission pads to see 
-the mission pad ID
-detected and displayed.
+Mission Pad Challenge 1
 Usage:
 
-python mission_pad_id_detector_13.py
+python mission_pad_challenge_1_solution.py
 
 """
 
+mission_pad_order = [1,2,3,4]
+next_pad_index = 1
 
 def main(droneblocks_tello):
     # enable mission pad detection downward camera only
@@ -27,10 +27,11 @@ def main(droneblocks_tello):
     print(f"Battery Life Percentage: {battery_level}")
     time.sleep(2)
 
-    droneblocks_tello.set_display_brightness(5)
+    print("Take off...")
+    droneblocks_tello.takeoff()
 
     # set the top led to RED to indicate we have not found a mission pad
-    droneblocks_tello.set_top_led(r=255, g=0, b=0)
+    droneblocks_tello.set_top_led(r=0, g=255, b=0)
 
     print("Start detecting mission pads...")
     try:
@@ -39,7 +40,7 @@ def main(droneblocks_tello):
             if 1 <= mid <= 8:
                 # then we have detected a mission pad
                 # set top led to GREEN to indicate we found a mission pad
-                droneblocks_tello.set_top_led(r=0, g=255, b=0)
+                droneblocks_tello.set_top_led(r=0, g=0, b=255)
                 print(mid)
                 droneblocks_tello.display_character(mid)
                 x = droneblocks_tello.get_mission_pad_distance_x()
@@ -49,7 +50,7 @@ def main(droneblocks_tello):
             else:
                 # we did not detect a mission pad id
                 droneblocks_tello.display_character("X")
-                droneblocks_tello.set_top_led(r=255, g=0, b=0)
+                droneblocks_tello.set_top_led(r=0, g=255, b=0)
 
             time.sleep(1)
 
