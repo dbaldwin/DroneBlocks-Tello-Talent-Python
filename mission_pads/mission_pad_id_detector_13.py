@@ -41,7 +41,7 @@ def main(droneblocks_tello):
                 # set top led to GREEN to indicate we found a mission pad
                 droneblocks_tello.set_top_led(r=0, g=255, b=0)
                 print(mid)
-                droneblocks_tello.display_character(str(mid))
+                droneblocks_tello.display_character(mid)
                 x = droneblocks_tello.get_mission_pad_distance_x()
                 y = droneblocks_tello.get_mission_pad_distance_y()
                 z = droneblocks_tello.get_mission_pad_distance_z()
