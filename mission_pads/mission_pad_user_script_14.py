@@ -8,7 +8,11 @@ the Tello to the mission pad.
 Usage:
 
 python -m droneblocks.tello_script_runner --handler mission_pad_user_script_14 --tello-web
+
+python -m droneblocks.tello_script_runner --handler mission_pad_user_script_14 --tello-web --display-video
+
 """
+
 
 def init(tello, params):
     # enable mission pad detection downward camera only
@@ -16,6 +20,8 @@ def init(tello, params):
     tello.set_mission_pad_detection_direction(0) # optional but here for clarity
     tello.clear_display()
     tello.set_top_led(r=255, g=0, b=0)
+    tello.set_display_brightness(5)
+
 
     return None
 
