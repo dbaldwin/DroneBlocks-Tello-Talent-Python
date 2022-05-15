@@ -20,8 +20,6 @@ def init(tello, params):
     tello.set_mission_pad_detection_direction(0) # optional but here for clarity
     tello.clear_display()
     tello.set_top_led(r=255, g=0, b=0)
-    tello.set_display_brightness(5)
-
 
     return None
 
