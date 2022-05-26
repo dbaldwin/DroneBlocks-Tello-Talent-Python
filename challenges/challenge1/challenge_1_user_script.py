@@ -5,7 +5,7 @@ from droneblocks.DroneBlocksTello import DroneBlocksTello
 Challenge:
 Write a user script that will change the top LED based on the height of the Tello.
 
-usage: python -m droneblocks.tello_script_runner --handler top_led_challenge_user_script --tello-web
+usage: python -m droneblocks.tello_script_runner --handler challenge_1_user_script --tello-web
 """
 
 lower_threshold = 60
@@ -29,6 +29,7 @@ def handler(tello, frame, params):
     print(height)
     if height < lower_threshold:
         tello.set_top_led(r=255, g=0, b=0)
+        tello.display_sad(display_color=DroneBlocksTello.RED)
     elif lower_threshold <= height < upper_threshold:
         tello.set_top_led(r=0, g=255, b=0)
         tello.display_up_arrow(display_color=DroneBlocksTello.PURPLE)
