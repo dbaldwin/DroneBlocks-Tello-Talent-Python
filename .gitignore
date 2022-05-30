@@ -269,3 +269,4 @@ cython_debug/
 dev_notes.txt
 /dev_docs/
 /update.sh
+/examples/front_distance.py
