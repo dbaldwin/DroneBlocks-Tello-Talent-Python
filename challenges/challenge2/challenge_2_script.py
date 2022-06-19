@@ -1,6 +1,7 @@
 from droneblocks.DroneBlocksContextManager import DroneBlocksContextManager
 from droneblocks.DroneBlocksTello import DroneBlocksTello
 import time
+import logging
 
 """
 Challenge 2 Solution
@@ -11,13 +12,11 @@ python challenge_2_script.py
 
 """
 
-import logging
-
 
 def main(droneblocks_tello: DroneBlocksTello):
     droneblocks_tello.LOGGER.setLevel(logging.INFO)
-    print("Clear display and intialize top LED")
-    # Display a smiley face on the matrix display!
+
+    print("Initialize LED and Display")
     droneblocks_tello.display_smile(display_color=DroneBlocksTello.PURPLE)
     droneblocks_tello.set_top_led(r=255, g=0, b=0)
     time.sleep(1)
