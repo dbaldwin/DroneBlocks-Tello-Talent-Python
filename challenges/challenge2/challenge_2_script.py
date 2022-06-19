@@ -19,7 +19,7 @@ def main(droneblocks_tello):
     # Display a smiley face on the matrix display!
     droneblocks_tello.display_smile(display_color=DroneBlocksTello.PURPLE)
     droneblocks_tello.set_top_led(r=255, g=0, b=0)
-    # time.sleep(1)
+    time.sleep(1)
 
     battery_level = droneblocks_tello.get_battery()
     print(f"Battery Life Percentage: {battery_level}")
@@ -28,7 +28,7 @@ def main(droneblocks_tello):
     print("Start Challenge 2 ")
     droneblocks_tello.takeoff()
 
-    time.sleep(5)
+    time.sleep(2)
     print("ff1")
     droneblocks_tello.set_top_led(r=0, g=255, b=0)
     droneblocks_tello.fly_forward(30, 'in')
@@ -72,10 +72,13 @@ def main(droneblocks_tello):
     print("land")
     droneblocks_tello.alternate_top_led(r1=200,g1=0,b1=0, r2=0,g2=0,b2=255)
     time.sleep(2)
+
+    droneblocks_tello.clear_everything()
+
     droneblocks_tello.land()
 
 
 
 if __name__ == '__main__':
-    with DroneBlocksContextManager(start_tello_web=False, ignore_tello_talent_methods=False) as db_tello:
+    with DroneBlocksContextManager(start_tello_web=False) as db_tello:
         main(db_tello)
