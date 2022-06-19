@@ -13,7 +13,8 @@ python challenge_2_script.py
 
 import logging
 
-def main(droneblocks_tello):
+
+def main(droneblocks_tello: DroneBlocksTello):
     droneblocks_tello.LOGGER.setLevel(logging.INFO)
     print("Clear display and intialize top LED")
     # Display a smiley face on the matrix display!
@@ -29,7 +30,7 @@ def main(droneblocks_tello):
     droneblocks_tello.takeoff()
 
     time.sleep(2)
-    print("ff1")
+    print("fly_forward 1")
     droneblocks_tello.set_top_led(r=0, g=255, b=0)
     droneblocks_tello.fly_forward(30, 'in')
     droneblocks_tello.set_top_led(r=255, g=0, b=0)
@@ -39,7 +40,7 @@ def main(droneblocks_tello):
     droneblocks_tello.rotate_counter_clockwise(90)
 
     time.sleep(1)
-    print("ff2")
+    print("fly_forward 2")
     droneblocks_tello.set_top_led(r=0, g=255, b=0)
     droneblocks_tello.fly_forward(30, 'in')
     droneblocks_tello.set_top_led(r=255, g=0, b=0)
@@ -49,7 +50,7 @@ def main(droneblocks_tello):
     droneblocks_tello.rotate_counter_clockwise(90)
 
     time.sleep(1)
-    print("ff3")
+    print("fly_forward 3")
     droneblocks_tello.set_top_led(r=0, g=255, b=0)
     droneblocks_tello.fly_forward(30, 'in')
     droneblocks_tello.set_top_led(r=255, g=0, b=0)
@@ -59,7 +60,7 @@ def main(droneblocks_tello):
     droneblocks_tello.rotate_counter_clockwise(90)
 
     time.sleep(1)
-    print("ff4")
+    print("fly_forward4")
     droneblocks_tello.set_top_led(r=0, g=255, b=0)
     droneblocks_tello.fly_forward(30, 'in')
     droneblocks_tello.set_top_led(r=255, g=0, b=0)
@@ -70,13 +71,13 @@ def main(droneblocks_tello):
 
     time.sleep(1)
     print("land")
-    droneblocks_tello.alternate_top_led(r1=200,g1=0,b1=0, r2=0,g2=0,b2=255)
+    droneblocks_tello.alternate_top_led(r1=200, g1=0, b1=0, r2=0, g2=0, b2=255)
     time.sleep(2)
 
     droneblocks_tello.clear_everything()
+    time.sleep(1)
 
     droneblocks_tello.land()
-
 
 
 if __name__ == '__main__':
