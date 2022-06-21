@@ -16,12 +16,11 @@ sleep_time = 1
 
 def main(droneblocks_tello: DroneBlocksTello):
     droneblocks_tello.LOGGER.setLevel(logging.INFO)
-    print("Clear display and intialize top LED")
 
     print("Enable mission pads")
     droneblocks_tello.enable_mission_pads()
 
-    # Display a smiley face on the matrix display!
+    print("Initialize LED and Display")
     droneblocks_tello.display_smile(display_color=DroneBlocksTello.PURPLE)
     droneblocks_tello.set_top_led(r=255, g=0, b=0)
     time.sleep(sleep_time)
