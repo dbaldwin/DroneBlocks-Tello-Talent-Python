@@ -14,7 +14,7 @@ python challenge_3_script.py
 sleep_time = 1
 
 
-def main(droneblocks_tello):
+def main(droneblocks_tello: DroneBlocksTello):
     droneblocks_tello.LOGGER.setLevel(logging.INFO)
     print("Clear display and intialize top LED")
 
