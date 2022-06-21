@@ -4,14 +4,15 @@ import time
 import logging
 
 """
-Challenge 2 Solution
+Challenge 3 Solution
 
 Usage:
 
-python challenge_2_script.py
+python challenge_3_script.py
 
 """
 sleep_time = 1
+
 
 def main(droneblocks_tello):
     droneblocks_tello.LOGGER.setLevel(logging.INFO)
@@ -19,7 +20,7 @@ def main(droneblocks_tello):
     # Display a smiley face on the matrix display!
     droneblocks_tello.display_smile(display_color=DroneBlocksTello.PURPLE)
     droneblocks_tello.set_top_led(r=255, g=0, b=0)
-    time.sleep(1)
+    time.sleep(sleep_time)
 
     battery_level = droneblocks_tello.get_battery()
     print(f"Battery Life Percentage: {battery_level}")
@@ -28,7 +29,7 @@ def main(droneblocks_tello):
     print("Start Challenge 2 ")
     droneblocks_tello.takeoff()
 
-    time.sleep(sleep_time*2)
+    time.sleep(sleep_time * 2)
 
     # show the current mission pad id
     mid = droneblocks_tello.get_mission_pad_id()
@@ -88,8 +89,8 @@ def main(droneblocks_tello):
 
     time.sleep(sleep_time)
     print("land")
-    droneblocks_tello.alternate_top_led(r1=200,g1=0,b1=0, r2=0,g2=0,b2=255)
-    time.sleep(sleep_time*2)
+    droneblocks_tello.alternate_top_led(r1=200, g1=0, b1=0, r2=0, g2=0, b2=255)
+    time.sleep(sleep_time * 2)
 
     droneblocks_tello.land()
 
