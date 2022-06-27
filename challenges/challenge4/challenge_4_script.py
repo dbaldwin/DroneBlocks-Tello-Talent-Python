@@ -13,15 +13,16 @@ python challenge_4_script.py
 """
 sleep_time = 2
 
+# python -m droneblocks.tt_matrix_generator
 image_string = "p000000p0p0000p000pbbp0000bppb0000brrb0000rbbr000r0000r0r000000r"
 
 
-def fly_leg(droneblocks_tello, x, m1, m2):
-    print(f"GO {m1} -> {m2}")
+def fly_leg_of_journey(droneblocks_tello, x, mid1, mid2):
+    print(f"GO {mid1} -> {mid2}")
     droneblocks_tello.display_image(image_string)
     droneblocks_tello.set_top_led(r=0, g=255, b=0)
-    droneblocks_tello.go_xyz_speed_yaw_mid(x=x, y=0, z=90, speed=30, yaw=0, mid1=m1, mid2=m2)
-    print(f"DONE {m1} -> {m2}")
+    droneblocks_tello.go_xyz_speed_yaw_mid(x=x, y=0, z=90, speed=30, yaw=0, mid1=mid1, mid2=mid2)
+    print(f"DONE {mid1} -> {mid2}")
     droneblocks_tello.set_top_led(r=255, g=0, b=0)
     mid = droneblocks_tello.get_mission_pad_id()
     droneblocks_tello.display_character(mid)
@@ -55,13 +56,13 @@ def main(droneblocks_tello: DroneBlocksTello):
 
     for i in range(1, 4):
         print(f"GO Trip {i} !!!!!!!!!!!!!!!!!!!!!!!!!")
-        fly_leg(droneblocks_tello, 125, 4, 2)
+        fly_leg_of_journey(droneblocks_tello, 125, 4, 2)
 
-        fly_leg(droneblocks_tello, 150, 2, 5)
+        fly_leg_of_journey(droneblocks_tello, 150, 2, 5)
 
-        fly_leg(droneblocks_tello, 125, 5, 3)
+        fly_leg_of_journey(droneblocks_tello, 125, 5, 3)
 
-        fly_leg(droneblocks_tello, 150, 3, 4)
+        fly_leg_of_journey(droneblocks_tello, 150, 3, 4)
 
     time.sleep(sleep_time * 2)
 
