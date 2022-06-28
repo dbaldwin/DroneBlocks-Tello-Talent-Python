@@ -21,7 +21,7 @@ def fly_leg_of_journey(droneblocks_tello, x, mid1, mid2):
     print(f"GO {mid1} -> {mid2}")
     droneblocks_tello.display_image(image_string)
     droneblocks_tello.set_top_led(r=0, g=255, b=0)
-    time.sleep(sleep_time/4)
+    time.sleep(sleep_time/1)
     droneblocks_tello.go_xyz_speed_yaw_mid(x=x, y=0, z=60, speed=30, yaw=0, mid1=mid1, mid2=mid2)
     print(f"DONE {mid1} -> {mid2}")
     droneblocks_tello.set_top_led(r=255, g=0, b=0)
