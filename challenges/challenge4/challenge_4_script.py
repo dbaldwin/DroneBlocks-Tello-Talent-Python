@@ -21,7 +21,8 @@ def fly_leg_of_journey(droneblocks_tello, x, mid1, mid2):
     print(f"GO {mid1} -> {mid2}")
     droneblocks_tello.display_image(image_string)
     droneblocks_tello.set_top_led(r=0, g=255, b=0)
-    droneblocks_tello.go_xyz_speed_yaw_mid(x=x, y=0, z=90, speed=30, yaw=0, mid1=mid1, mid2=mid2)
+    time.sleep(sleep_time/4)
+    droneblocks_tello.go_xyz_speed_yaw_mid(x=x, y=0, z=60, speed=30, yaw=0, mid1=mid1, mid2=mid2)
     print(f"DONE {mid1} -> {mid2}")
     droneblocks_tello.set_top_led(r=255, g=0, b=0)
     mid = droneblocks_tello.get_mission_pad_id()
@@ -54,7 +55,7 @@ def main(droneblocks_tello: DroneBlocksTello):
     droneblocks_tello.display_character(mid)
     time.sleep(sleep_time)
 
-    for i in range(1, 4):
+    for i in range(1, 3):
         print(f"GO Trip {i} !!!!!!!!!!!!!!!!!!!!!!!!!")
         fly_leg_of_journey(droneblocks_tello, 125, 4, 2)
 
@@ -66,8 +67,12 @@ def main(droneblocks_tello: DroneBlocksTello):
 
     time.sleep(sleep_time * 2)
 
+    print("land")
+    droneblocks_tello.alternate_top_led(r1=200, g1=0, b1=0, r2=0, g2=0, b2=255)
+    time.sleep(sleep_time * 2)
+
     droneblocks_tello.clear_everything()
-    time.sleep(sleep_time)
+    time.sleep(1)
 
     droneblocks_tello.land()
 
