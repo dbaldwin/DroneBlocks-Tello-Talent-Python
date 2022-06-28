@@ -55,7 +55,7 @@ def main(droneblocks_tello: DroneBlocksTello):
     droneblocks_tello.display_character(mid)
     time.sleep(sleep_time)
 
-    for i in range(1, 3):
+    for i in range(1, 3):  # repeat the loop twice
         print(f"GO Trip {i} !!!!!!!!!!!!!!!!!!!!!!!!!")
         fly_leg_of_journey(droneblocks_tello, 125, 4, 2)
 
@@ -69,7 +69,7 @@ def main(droneblocks_tello: DroneBlocksTello):
 
     print("land")
     droneblocks_tello.alternate_top_led(r1=200, g1=0, b1=0, r2=0, g2=0, b2=255)
-    time.sleep(sleep_time * 2)
+    time.sleep(sleep_time)
 
     droneblocks_tello.clear_everything()
     time.sleep(1)
