@@ -43,7 +43,7 @@ def main(droneblocks_tello: DroneBlocksTello):
 
     battery_level = droneblocks_tello.get_battery()
     print(f"Battery Life Percentage: {battery_level}")
-    time.sleep(sleep_time)
+    time.sleep(sleep_time*3)
 
     print("Start Challenge 4 ")
     droneblocks_tello.takeoff()
